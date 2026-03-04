@@ -738,7 +738,56 @@ nav.scrolled {
   line-height: 1.7;
 }
 
-/* ===== DEĞERLER ===== */
+/* ===== 50 ESER ===== */
+.kaynaklar-bolum {
+  padding: 80px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.kaynaklar-baslik-wrap { text-align: center; margin-bottom: 50px; }
+.kaynaklar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.kaynak-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(201,168,76,0.04);
+  border: 1px solid rgba(201,168,76,0.12);
+  padding: 14px 18px;
+  border-radius: 3px;
+  transition: border-color 0.3s, background 0.3s;
+}
+.kaynak-item:hover {
+  border-color: rgba(201,168,76,0.3);
+  background: rgba(201,168,76,0.08);
+}
+.kaynak-no {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  color: rgba(201,168,76,0.5);
+  min-width: 26px;
+  padding-top: 2px;
+}
+.kaynak-bilgi { flex: 1; }
+.kaynak-ad {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  color: var(--krem);
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+.kaynak-yazar { font-size: 12px; color: rgba(201,168,76,0.7); font-style: italic; }
+@media (max-width: 768px) {
+  .kaynaklar-grid { grid-template-columns: 1fr; }
+  .kaynaklar-bolum { padding: 60px 24px; }
+}
+
+/* ===== DEGERLER ===== */
+
 .degerler-hero {
   padding: 100px 60px 50px;
   text-align: center;
@@ -1245,16 +1294,16 @@ footer::before {
 
 <!-- NAVİGASYON -->
 <nav id="navbar">
-  <div class="nav-logo" onclick="sayfaGoster('anasayfa')">T.A.D.A</div>
-  <div class="hamburger" id="hamburger" onclick="menuToggle()">
+  <div class="nav-logo" data-sayfa="anasayfa">T.A.D.A</div>
+  <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </div>
   <ul class="nav-menu" id="navMenu">
-    <li><a href="#" onclick="sayfaGoster('anasayfa');return false;">Ana Sayfa</a></li>
-    <li><a href="#" onclick="sayfaGoster('model');return false;">Kulüp Modeli</a></li>
-    <li><a href="#" onclick="sayfaGoster('degerler');return false;">Değerlerimiz</a></li>
-    <li><a href="#" onclick="sayfaGoster('iletisim');return false;">İletişim</a></li>
-    <li><a href="#" onclick="sayfaGoster('basvuru');return false;">Başvuru</a></li>
+    <li><a href="#" data-sayfa="anasayfa">Ana Sayfa</a></li>
+    <li><a href="#" data-sayfa="model">Kulüp Modeli</a></li>
+    <li><a href="#" data-sayfa="degerler">Değerlerimiz</a></li>
+    <li><a href="#" data-sayfa="iletisim">İletişim</a></li>
+    <li><a href="#" data-sayfa="basvuru">Başvuru</a></li>
   </ul>
 </nav>
 
@@ -1276,8 +1325,8 @@ footer::before {
       <div class="altin-cizgi"></div>
       <p class="hero-slogan">"Geçmişi Anlamadan Geleceği İnşa Edemezsin"</p>
       <div class="hero-butonlar">
-        <button class="btn-altin" onclick="sayfaGoster('model')">Kulüp Modelini Keşfet</button>
-        <button class="btn-cerceve" onclick="sayfaGoster('degerler')">Değerlerimiz</button>
+        <button class="btn-altin" data-sayfa="model">Kulüp Modelini Keşfet</button>
+        <button class="btn-cerceve" data-sayfa="degerler">Değerlerimiz</button>
       </div>
     </div>
 
@@ -1471,6 +1520,83 @@ footer::before {
         <div class="kural-metin">Yılda en az bir kez TTK bağlantılı bir akademisyen veya tarihçi kulüp çalışmalarını değerlendirir. Geri bildirimler arşivlenerek bir sonraki yıla taşınır.</div>
       </div>
     </div>
+    <div class="kural-item reveal">
+      <div class="kural-no">06</div>
+      <div class="kural-icerik">
+        <div class="kural-baslik">AÇIK ETKİNLİK YÜKÜMLÜLÜĞÜ</div>
+        <div class="kural-metin">Her dönem en az bir açık etkinlik düzenlenmesi zorunludur. Tüm okul öğrencilerinin kulübün çalışmalarına erişimi sağlanmalıdır.</div>
+      </div>
+    </div>
+    <div class="kural-item reveal">
+      <div class="kural-no">07</div>
+      <div class="kural-icerik">
+        <div class="kural-baslik">ODA DÜZENİ VE KAYNAK SORUMLULUĞU</div>
+        <div class="kural-metin">Kulüp odası her zaman düzenli tutulur. 50 kaynak eksiksiz muhafaza edilir. Hasarlanan veya kaybolan kaynaklar en kısa sürede temin edilir. Zarara sebep olan kişi bedeli öder ve gerekli disiplin cezasını alır.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 50 ESER ===== -->
+  <div class="kaynaklar-bolum">
+    <div class="kaynaklar-baslik-wrap reveal">
+      <div class="bolum-on-yazi">KULÜP KÜTÜPHANESİ</div>
+      <div class="bolum-baslik">50 TEMEL ESER</div>
+      <div class="separator"><div class="separator-cizgi"></div><div class="separator-nokta"></div><div class="separator-cizgi"></div></div>
+      <div class="bolum-alt">Her T.A.D.A kulüp odasında bulunması zorunlu kaynaklar</div>
+    </div>
+    <div class="kaynaklar-grid">
+      <div class="kaynak-item reveal"><div class="kaynak-no">01</div><div class="kaynak-bilgi"><div class="kaynak-ad">İttihat ve Terakki Cemiyeti ve İstiklal Harbimizde Enver Paşa ve İttihat ve Terakki Erkanı</div><div class="kaynak-yazar">Kazım Karabekir · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">02</div><div class="kaynak-bilgi"><div class="kaynak-ad">Theophanes Confessor'ün Kroniğinde Türkler: 284-813</div><div class="kaynak-yazar">KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">03</div><div class="kaynak-bilgi"><div class="kaynak-ad">Dedem Enver Paşa</div><div class="kaynak-yazar">Fatih Bayhan, Osman Mayatepek · TİMAŞ YAYINLARI</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">04</div><div class="kaynak-bilgi"><div class="kaynak-ad">İttihadçı'nın Sandığı</div><div class="kaynak-yazar">Murat Bardakçı · TURKUVAZ KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">05</div><div class="kaynak-bilgi"><div class="kaynak-ad">Fatih Sultan Mehmed</div><div class="kaynak-yazar">Prof. Dr. İlber Ortaylı · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">06</div><div class="kaynak-bilgi"><div class="kaynak-ad">İttihatçılık İktidar</div><div class="kaynak-yazar">Süleyman Tekir · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">07</div><div class="kaynak-bilgi"><div class="kaynak-ad">İttihatçılık Doğuş</div><div class="kaynak-yazar">Süleyman Tekir · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">08</div><div class="kaynak-bilgi"><div class="kaynak-ad">Devlet-i Aliyye — Osmanlı İmparatorluğu Üzerine Araştırmalar I</div><div class="kaynak-yazar">Prof. Dr. Halil İnalcık · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">09</div><div class="kaynak-bilgi"><div class="kaynak-ad">Devlet-i Aliyye — Osmanlı İmparatorluğu Üzerine Araştırmalar II</div><div class="kaynak-yazar">Prof. Dr. Halil İnalcık · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">10</div><div class="kaynak-bilgi"><div class="kaynak-ad">Devlet-i Aliyye — Osmanlı İmparatorluğu Üzerine Araştırmalar III (Köprülüler Devri)</div><div class="kaynak-yazar">Prof. Dr. Halil İnalcık · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">11</div><div class="kaynak-bilgi"><div class="kaynak-ad">Devlet-i Aliyye — Osmanlı İmparatorluğu Üzerine Araştırmalar IV (Ayanlar, Tanzimat, Meşrutiyet)</div><div class="kaynak-yazar">Prof. Dr. Halil İnalcık · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">12</div><div class="kaynak-bilgi"><div class="kaynak-ad">Türk İdarî Teşkilatı Tarihi</div><div class="kaynak-yazar">Prof. Dr. Halil İnalcık · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">13</div><div class="kaynak-bilgi"><div class="kaynak-ad">Kısa Osmanlı Tarihi</div><div class="kaynak-yazar">Prof. Dr. Halil İnalcık · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">14</div><div class="kaynak-bilgi"><div class="kaynak-ad">Üç Tarz-ı Siyaset</div><div class="kaynak-yazar">Yusuf Akçura</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">15</div><div class="kaynak-bilgi"><div class="kaynak-ad">Enver</div><div class="kaynak-yazar">Murat Bardakçı · TURKUVAZ KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">16</div><div class="kaynak-bilgi"><div class="kaynak-ad">Gazi Mustafa Kemal Atatürk</div><div class="kaynak-yazar">Prof. Dr. İlber Ortaylı · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">17</div><div class="kaynak-bilgi"><div class="kaynak-ad">Türklerin Tarihi — Orta Asya'nın Bozkırlarından Avrupa'nın Kapılarına</div><div class="kaynak-yazar">Prof. Dr. İlber Ortaylı · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">18</div><div class="kaynak-bilgi"><div class="kaynak-ad">Türklerin Tarihi 2 — Anadolu'nun Bozkırlarından Avrupa'nın İçlerine</div><div class="kaynak-yazar">Prof. Dr. İlber Ortaylı · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">19</div><div class="kaynak-bilgi"><div class="kaynak-ad">İki Devrin Perde Arkası</div><div class="kaynak-yazar">Samih Nafiz Tansu · İLGİ KÜLTÜR SANAT YAYINLARI</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">20</div><div class="kaynak-bilgi"><div class="kaynak-ad">Milli İstihbarat Teşkilatı (1826-2023)</div><div class="kaynak-yazar">Polat Safi · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">21</div><div class="kaynak-bilgi"><div class="kaynak-ad">Enver Paşa — Komitenin Kahramanı</div><div class="kaynak-yazar">Mustafa Çolak · YEDİTEPE YAYINEVİ</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">22</div><div class="kaynak-bilgi"><div class="kaynak-ad">Enver Paşa'nın Trablusgarp Günlüğü</div><div class="kaynak-yazar">Enver Paşa · DORLİON YAYINLARI</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">23</div><div class="kaynak-bilgi"><div class="kaynak-ad">Nutuk</div><div class="kaynak-yazar">Mustafa Kemal Atatürk · CAN YAYINLARI</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">24</div><div class="kaynak-bilgi"><div class="kaynak-ad">Beyaz Zambaklar Ülkesinde</div><div class="kaynak-yazar">Grigory Petrov · TÜRKİYE İŞ BANKASI KÜLTÜR YAYINLARI</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">25</div><div class="kaynak-bilgi"><div class="kaynak-ad">Çankaya (Özel Baskı)</div><div class="kaynak-yazar">Falih Rıfkı Atay · POZİTİF YAYINLARI</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">26</div><div class="kaynak-bilgi"><div class="kaynak-ad">Tek Adam (3 cilt)</div><div class="kaynak-yazar">Şevket Süreyya Aydemir</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">27</div><div class="kaynak-bilgi"><div class="kaynak-ad">Hatıralar</div><div class="kaynak-yazar">İsmet İnönü</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">28</div><div class="kaynak-bilgi"><div class="kaynak-ad">Zeytindağı</div><div class="kaynak-yazar">Falih Rıfkı Atay</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">29</div><div class="kaynak-bilgi"><div class="kaynak-ad">Büyük Türkiye Tarihi</div><div class="kaynak-yazar">Yılmaz Öztuna</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">30</div><div class="kaynak-bilgi"><div class="kaynak-ad">Türkiye Tarihi (5 cilt)</div><div class="kaynak-yazar">Sina Akşin</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">31</div><div class="kaynak-bilgi"><div class="kaynak-ad">Osmanlı'da Ermeni Meselesi</div><div class="kaynak-yazar">Taner Akçam</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">32</div><div class="kaynak-bilgi"><div class="kaynak-ad">Osmanlı'nın Son Savaşı</div><div class="kaynak-yazar">Zekeriya Türkmen</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">33</div><div class="kaynak-bilgi"><div class="kaynak-ad">Belgelerle Teşkilat-ı Mahsusa</div><div class="kaynak-yazar">Ergün Hiçyılmaz</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">34</div><div class="kaynak-bilgi"><div class="kaynak-ad">Makedonya'dan Orta Asya'ya Enver Paşa</div><div class="kaynak-yazar">Şevket Süreyya Aydemir</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">35</div><div class="kaynak-bilgi"><div class="kaynak-ad">Osmanlı'nın Son Yüzyılı</div><div class="kaynak-yazar">Haluk Şahin</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">36</div><div class="kaynak-bilgi"><div class="kaynak-ad">Hayat ve Hatıratım</div><div class="kaynak-yazar">Rıza Nur</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">37</div><div class="kaynak-bilgi"><div class="kaynak-ad">Türkistan Devletlerinin Milli Mücadeleleri</div><div class="kaynak-yazar">Baymirza Hayit</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">38</div><div class="kaynak-bilgi"><div class="kaynak-ad">Hatıralar</div><div class="kaynak-yazar">Zeki Velidi Togan</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">39</div><div class="kaynak-bilgi"><div class="kaynak-ad">İstiklal Harbimiz</div><div class="kaynak-yazar">Kazım Karabekir</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">40</div><div class="kaynak-bilgi"><div class="kaynak-ad">Milli Mücadele Hatıraları</div><div class="kaynak-yazar">Ali Fuat Cebesoy</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">41</div><div class="kaynak-bilgi"><div class="kaynak-ad">Milli Mücadele</div><div class="kaynak-yazar">Kâzım Özalp</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">42</div><div class="kaynak-bilgi"><div class="kaynak-ad">Çocukluğum Gençliğim Siyasi ve Edebi Hatıralarım</div><div class="kaynak-yazar">Yahya Kemal Beyatlı</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">43</div><div class="kaynak-bilgi"><div class="kaynak-ad">Türk İnkılabına Bakışlar</div><div class="kaynak-yazar">Peyami Safa</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">44</div><div class="kaynak-bilgi"><div class="kaynak-ad">Emir Timur — Tarih, Siyaset, Miras</div><div class="kaynak-yazar">Prof. Dr. A. Ahat Andican · SELENGE YAYINLARI</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">45</div><div class="kaynak-bilgi"><div class="kaynak-ad">Enver Paşa'nın Eşi Naciye Sultan'ın Anıları</div><div class="kaynak-yazar">Burak Enver · KRONİK KİTAP</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">46</div><div class="kaynak-bilgi"><div class="kaynak-ad">Orhun Yazıtları</div><div class="kaynak-yazar">Muharrem Ergin · BOĞAZİÇİ YAYINLARI</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">47</div><div class="kaynak-bilgi"><div class="kaynak-ad">Büyük Hun İmparatorluğu</div><div class="kaynak-yazar">Prof. Dr. Bahaeddin Ögel · TTK YAYINLARI</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">48</div><div class="kaynak-bilgi"><div class="kaynak-ad">Türk Mitolojisi</div><div class="kaynak-yazar">Prof. Dr. Bahaeddin Ögel · TTK YAYINLARI</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">49</div><div class="kaynak-bilgi"><div class="kaynak-ad">Göktürkler</div><div class="kaynak-yazar">Ahmet Taşağıl · TTK YAYINLARI</div></div></div>
+      <div class="kaynak-item reveal"><div class="kaynak-no">50</div><div class="kaynak-bilgi"><div class="kaynak-ad">İslam Öncesi Türk Tarihi</div><div class="kaynak-yazar">Prof. Dr. İbrahim Kafesoğlu · ÖTÜKEN YAYINEVİ</div></div></div>
+    </div>
+
   </div>
 
   <footer>
@@ -1755,7 +1881,7 @@ footer::before {
     <div class="iletisim-kart reveal reveal-delay-2">
       <span class="iletisim-ikon">📧</span>
       <div class="iletisim-baslik">E-POSTA</div>
-      <div class="iletisim-metin">tadaatolyeleri@gmail.com</div>
+      <div class="iletisim-metin"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="700411141111041f1c09151c15021930171d11191c5e131f1d">[email&#160;protected]</a></div>
     </div>
     <div class="iletisim-kart reveal reveal-delay-3">
       <span class="iletisim-ikon">🌐</span>
@@ -1785,132 +1911,139 @@ footer::before {
 
 <script>
 // ===== SAYFA YÖNETİMİ =====
-window.sayfaGoster = function(id) {
+function sayfaGoster(id) {
   document.querySelectorAll('.sayfa').forEach(s => s.classList.remove('aktif'));
-  document.getElementById(id).classList.add('aktif');
+  var el = document.getElementById(id);
+  if (el) el.classList.add('aktif');
   window.scrollTo({ top: 0, behavior: 'instant' });
-  document.getElementById('navMenu').classList.remove('acik');
-  document.getElementById('hamburger').classList.remove('acik');
-  // Reveal'leri sıfırla ve tetikle
+  var menu = document.getElementById('navMenu');
+  var burger = document.getElementById('hamburger');
+  if (menu) menu.classList.remove('acik');
+  if (burger) burger.classList.remove('acik');
   setTimeout(initReveal, 100);
-};
+}
 
-window.menuToggle = function() {
-  document.getElementById('navMenu').classList.toggle('acik');
-  document.getElementById('hamburger').classList.toggle('acik');
-};
+function menuToggle() {
+  var menu = document.getElementById('navMenu');
+  var burger = document.getElementById('hamburger');
+  if (menu) menu.classList.toggle('acik');
+  if (burger) burger.classList.toggle('acik');
+}
+
+// ===== EVENT LISTENERS =====
+document.addEventListener('DOMContentLoaded', function() {
+  // data-sayfa linkleri
+  document.querySelectorAll('[data-sayfa]').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      sayfaGoster(this.getAttribute('data-sayfa'));
+    });
+  });
+
+  // Hamburger
+  var burger = document.getElementById('hamburger');
+  if (burger) burger.addEventListener('click', menuToggle);
+
+  // Nav logo
+  var logo = document.querySelector('.nav-logo');
+  if (logo) logo.addEventListener('click', function() { sayfaGoster('anasayfa'); });
+});
 
 // ===== NAV SCROLL EFEKTİ =====
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('navbar');
-  if (window.scrollY > 30) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('navbar');
+  if (!nav) return;
+  if (window.scrollY > 30) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
 });
 
 // ===== SCROLL REVEAL =====
-let revealObserver = null;
+var revealObserver = null;
 
 function initReveal() {
-  // Eski observer'ı tamamen kapat
-  if (revealObserver) {
-    revealObserver.disconnect();
-    revealObserver = null;
-  }
+  if (revealObserver) { revealObserver.disconnect(); revealObserver = null; }
+  var reveals = document.querySelectorAll('.sayfa.aktif .reveal, .sayfa.aktif .reveal-left, .sayfa.aktif .reveal-right');
+  reveals.forEach(function(el) { el.classList.remove('visible'); });
 
-  // Aktif sayfadaki tüm reveal elementlerini sıfırla
-  const reveals = document.querySelectorAll('.sayfa.aktif .reveal, .sayfa.aktif .reveal-left, .sayfa.aktif .reveal-right');
-  reveals.forEach(el => el.classList.remove('visible'));
-
-  revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Bir kez göründükten sonra bir daha gözlemleme — titreşme önlenir
         revealObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
 
-  reveals.forEach(el => revealObserver.observe(el));
+  reveals.forEach(function(el) { revealObserver.observe(el); });
 
-  // Zaten görünür olanları hemen göster (scroll beklemeden)
-  setTimeout(() => {
-    reveals.forEach(el => {
-      const rect = el.getBoundingClientRect();
+  setTimeout(function() {
+    reveals.forEach(function(el) {
+      var rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom > 0) {
         el.classList.add('visible');
-        revealObserver && revealObserver.unobserve(el);
+        if (revealObserver) revealObserver.unobserve(el);
       }
     });
   }, 50);
 }
 
 // ===== PARALLAX =====
-const hero = document.getElementById('hero-section');
-document.addEventListener('mousemove', (e) => {
-  const aktifSayfa = document.querySelector('.sayfa.aktif');
+document.addEventListener('mousemove', function(e) {
+  var aktifSayfa = document.querySelector('.sayfa.aktif');
   if (!aktifSayfa || aktifSayfa.id !== 'anasayfa') return;
-  
-  const cx = window.innerWidth / 2;
-  const cy = window.innerHeight / 2;
-  const dx = (e.clientX - cx) / cx;
-  const dy = (e.clientY - cy) / cy;
-
-  document.querySelectorAll('.parallax-el').forEach(el => {
-    const speed = parseFloat(el.dataset.speed) || 0.1;
-    el.style.transform = `translate(${dx * 30 * speed}px, ${dy * 30 * speed}px)`;
+  var cx = window.innerWidth / 2;
+  var cy = window.innerHeight / 2;
+  var dx = (e.clientX - cx) / cx;
+  var dy = (e.clientY - cy) / cy;
+  document.querySelectorAll('.parallax-el').forEach(function(el) {
+    var speed = parseFloat(el.dataset.speed) || 0.1;
+    el.style.transform = 'translate(' + (dx*30*speed) + 'px,' + (dy*30*speed) + 'px)';
   });
 });
 
 // ===== 3D KART =====
-document.addEventListener('mousemove', (e) => {
-  const cards = document.querySelectorAll('.card-3d[data-tilt]');
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-    const cardCx = rect.left + rect.width / 2;
-    const cardCy = rect.top + rect.height / 2;
-    const dx = (e.clientX - cardCx) / (rect.width / 2);
-    const dy = (e.clientY - cardCy) / (rect.height / 2);
-    
+document.addEventListener('mousemove', function(e) {
+  document.querySelectorAll('.card-3d[data-tilt]').forEach(function(card) {
+    var rect = card.getBoundingClientRect();
+    var cx = rect.left + rect.width / 2;
+    var cy = rect.top + rect.height / 2;
+    var dx = (e.clientX - cx) / (rect.width / 2);
+    var dy = (e.clientY - cy) / (rect.height / 2);
     if (Math.abs(dx) < 1.5 && Math.abs(dy) < 1.5) {
-      const rotX = -dy * 8;
-      const rotY = dx * 8;
-      card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(8px)`;
-      
-      const shine = card.querySelector('.card-shine');
-      const mx = ((e.clientX - rect.left) / rect.width) * 100;
-      const my = ((e.clientY - rect.top) / rect.height) * 100;
-      shine.style.setProperty('--mouse-x', mx + '%');
-      shine.style.setProperty('--mouse-y', my + '%');
+      card.style.transform = 'perspective(1000px) rotateX(' + (-dy*8) + 'deg) rotateY(' + (dx*8) + 'deg) translateZ(8px)';
+      var shine = card.querySelector('.card-shine');
+      if (shine) {
+        shine.style.setProperty('--mouse-x', ((e.clientX - rect.left) / rect.width * 100) + '%');
+        shine.style.setProperty('--mouse-y', ((e.clientY - rect.top) / rect.height * 100) + '%');
+      }
     } else {
       card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
     }
   });
 });
 
-document.addEventListener('mouseleave', () => {
-  document.querySelectorAll('.card-3d[data-tilt]').forEach(card => {
+document.addEventListener('mouseleave', function() {
+  document.querySelectorAll('.card-3d[data-tilt]').forEach(function(card) {
     card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
   });
 });
 
-// ===== PARTIKÜLLER =====
-const canvas = document.getElementById('particles-canvas');
-const ctx = canvas.getContext('2d');
-let particles = [];
+// ===== PARTİKÜLLER =====
+var canvas = document.getElementById('particles-canvas');
+var ctx = canvas ? canvas.getContext('2d') : null;
+var particles = [];
 
 function resizeCanvas() {
+  if (!canvas) return;
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
 
 function createParticles() {
+  if (!canvas) return;
   particles = [];
-  const count = Math.floor((canvas.width * canvas.height) / 18000);
-  for (let i = 0; i < count; i++) {
+  var count = Math.floor((canvas.width * canvas.height) / 18000);
+  for (var i = 0; i < count; i++) {
     particles.push({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -1926,41 +2059,35 @@ function createParticles() {
 }
 
 function animateParticles() {
+  if (!ctx) return;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-  particles.forEach(p => {
+  particles.forEach(function(p) {
     p.x += p.speedX;
     p.y += p.speedY;
     p.pulse += p.pulseSpeed;
-    
     if (p.x < 0) p.x = canvas.width;
     if (p.x > canvas.width) p.x = 0;
     if (p.y < 0) p.y = canvas.height;
     if (p.y > canvas.height) p.y = 0;
-    
-    const opacity = p.opacity * (0.6 + 0.4 * Math.sin(p.pulse));
+    var opacity = p.opacity * (0.6 + 0.4 * Math.sin(p.pulse));
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${p.color}, ${opacity})`;
+    ctx.fillStyle = 'rgba(' + p.color + ',' + opacity + ')';
     ctx.fill();
   });
-  
   requestAnimationFrame(animateParticles);
 }
 
-window.addEventListener('resize', () => {
+window.addEventListener('resize', function() {
   resizeCanvas();
   createParticles();
 });
 
+// ===== BAŞLANGIÇ =====
 resizeCanvas();
 createParticles();
 animateParticles();
-
-// Sayfa ilk açılışta reveal başlat
-window.addEventListener('load', () => {
-  setTimeout(initReveal, 200);
-});
+initReveal();
 </script>
 </body>
 </html>
